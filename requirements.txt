@@ -1,0 +1,5 @@
+# Optional for the local ontology graph. The demo falls back to simple in-memory lists if absent.
+networkx
+
+# Production orchestration target. The demo keeps a deterministic fallback so it can run offline.
+langgraph

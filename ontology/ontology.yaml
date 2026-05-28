@@ -1,0 +1,171 @@
+{
+  "concepts": [
+    {
+      "id": "region_apac",
+      "label": "APAC",
+      "type": "Region",
+      "aliases": ["apac", "asia pacific"],
+      "maps_to": {
+        "table": "dim_region",
+        "column": "parent_region",
+        "value": "APAC"
+      }
+    },
+    {
+      "id": "region_japan",
+      "label": "Japan",
+      "type": "Region",
+      "aliases": ["japan", "jp"],
+      "maps_to": {
+        "table": "dim_region",
+        "column": "region_name",
+        "value": "Japan"
+      }
+    },
+    {
+      "id": "region_india",
+      "label": "India",
+      "type": "Region",
+      "aliases": ["india", "in"],
+      "maps_to": {
+        "table": "dim_region",
+        "column": "region_name",
+        "value": "India"
+      }
+    },
+    {
+      "id": "region_singapore",
+      "label": "Singapore",
+      "type": "Region",
+      "aliases": ["singapore", "sg"],
+      "maps_to": {
+        "table": "dim_region",
+        "column": "region_name",
+        "value": "Singapore"
+      }
+    },
+    {
+      "id": "region_emea",
+      "label": "EMEA",
+      "type": "Region",
+      "aliases": ["emea", "europe"],
+      "maps_to": {
+        "table": "dim_region",
+        "column": "parent_region",
+        "value": "EMEA"
+      }
+    },
+    {
+      "id": "bu_retail",
+      "label": "Retail",
+      "type": "BusinessUnit",
+      "aliases": ["retail", "store"],
+      "maps_to": {
+        "table": "dim_business_unit",
+        "column": "name",
+        "value": "Retail"
+      }
+    },
+    {
+      "id": "bu_wholesale",
+      "label": "Wholesale",
+      "type": "BusinessUnit",
+      "aliases": ["wholesale", "b2b"],
+      "maps_to": {
+        "table": "dim_business_unit",
+        "column": "name",
+        "value": "Wholesale"
+      }
+    },
+    {
+      "id": "metric_revenue",
+      "label": "Revenue",
+      "type": "Metric",
+      "aliases": ["revenue", "sales", "top line"],
+      "maps_to": {
+        "table": "fact_sales",
+        "column": "revenue"
+      }
+    },
+    {
+      "id": "metric_refunds",
+      "label": "Refunds",
+      "type": "Metric",
+      "aliases": ["refund", "refunds", "returns"],
+      "maps_to": {
+        "table": "fact_sales",
+        "column": "refunds"
+      }
+    },
+    {
+      "id": "metric_expense",
+      "label": "Expense",
+      "type": "Metric",
+      "aliases": ["expense", "expenses", "cost"],
+      "maps_to": {
+        "table": "fact_sales",
+        "column": "expense"
+      }
+    },
+    {
+      "id": "metric_units",
+      "label": "Units Sold",
+      "type": "Metric",
+      "aliases": ["units", "unit sales", "volume"],
+      "maps_to": {
+        "table": "fact_sales",
+        "column": "units"
+      }
+    },
+    {
+      "id": "kpi_net_revenue",
+      "label": "Net Revenue",
+      "type": "KPI",
+      "aliases": ["net revenue"],
+      "formula": "revenue - refunds"
+    },
+    {
+      "id": "kpi_profitability",
+      "label": "Profitability",
+      "type": "KPI",
+      "aliases": ["profitability", "profit", "margin"],
+      "formula": "revenue - refunds - expense"
+    },
+    {
+      "id": "customer_segment_premium",
+      "label": "Premium Segment",
+      "type": "Segment",
+      "aliases": ["premium", "high value"],
+      "maps_to": {
+        "table": "dim_customer",
+        "column": "segment",
+        "value": "Premium"
+      }
+    },
+    {
+      "id": "product_sales",
+      "label": "Product Sales",
+      "type": "Product",
+      "aliases": ["product sales", "product mix", "products"]
+    }
+  ],
+  "relationships": [
+    {"source": "region_japan", "target": "region_apac", "type": "rolls_up_to"},
+    {"source": "region_india", "target": "region_apac", "type": "rolls_up_to"},
+    {"source": "region_singapore", "target": "region_apac", "type": "rolls_up_to"},
+    {"source": "bu_retail", "target": "region_apac", "type": "belongs_to"},
+    {"source": "metric_revenue", "target": "bu_retail", "type": "belongs_to"},
+    {"source": "metric_revenue", "target": "metric_units", "type": "depends_on"},
+    {"source": "metric_refunds", "target": "metric_revenue", "type": "impacts"},
+    {"source": "metric_revenue", "target": "product_sales", "type": "depends_on"},
+    {"source": "kpi_net_revenue", "target": "metric_revenue", "type": "depends_on"},
+    {"source": "kpi_net_revenue", "target": "metric_refunds", "type": "depends_on"},
+    {"source": "kpi_profitability", "target": "kpi_net_revenue", "type": "depends_on"},
+    {"source": "kpi_profitability", "target": "metric_expense", "type": "depends_on"},
+    {"source": "metric_refunds", "target": "kpi_profitability", "type": "impacts"},
+    {"source": "metric_expense", "target": "kpi_profitability", "type": "impacts"},
+    {"source": "region_apac", "target": "kpi_net_revenue", "type": "contributes_to"},
+    {"source": "customer_segment_premium", "target": "metric_revenue", "type": "linked_to"},
+    {"source": "product_sales", "target": "bu_retail", "type": "sold_by"}
+  ]
+}
