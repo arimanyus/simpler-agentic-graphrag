@@ -1,0 +1,73 @@
+<mxfile host="app.diagrams.net" modified="2026-05-29T00:24:00.000Z" agent="Cursor" version="24.7.17">
+  <diagram id="production-deployment" name="Production Deployment">
+    <mxGraphModel dx="1422" dy="794" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1200" pageHeight="760" math="0" shadow="0">
+      <root>
+        <mxCell id="0"/>
+        <mxCell id="1" parent="0"/>
+        <mxCell id="title" value="GraphRAG Production Deployment Architecture" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;fontSize=24;fontStyle=1" vertex="1" parent="1">
+          <mxGeometry x="260" y="30" width="680" height="40" as="geometry"/>
+        </mxCell>
+        <mxCell id="users" value="Users&#xa;Analysts / Finance Leaders" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=14;fontStyle=1" vertex="1" parent="1">
+          <mxGeometry x="50" y="140" width="170" height="80" as="geometry"/>
+        </mxCell>
+        <mxCell id="app" value="GraphRAG App / API&#xa;Auth, sessions, response UI" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=14;fontStyle=1" vertex="1" parent="1">
+          <mxGeometry x="280" y="130" width="190" height="100" as="geometry"/>
+        </mxCell>
+        <mxCell id="orchestrator" value="LangGraph Orchestrator&#xa;Stateful retrieval workflow&#xa;Horizontal scale workers" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;fontSize=14;fontStyle=1" vertex="1" parent="1">
+          <mxGeometry x="540" y="120" width="220" height="120" as="geometry"/>
+        </mxCell>
+        <mxCell id="graph" value="Graph Service / Neo4j&#xa;Ontology&#xa;Business relationships&#xa;Concept-to-Snowflake mappings" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;fontSize=14;fontStyle=1" vertex="1" parent="1">
+          <mxGeometry x="850" y="80" width="260" height="120" as="geometry"/>
+        </mxCell>
+        <mxCell id="vector" value="Vector Index&#xa;Metric docs, synonyms, examples&#xa;Semantic hints" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;fontSize=14;fontStyle=1" vertex="1" parent="1">
+          <mxGeometry x="850" y="240" width="260" height="95" as="geometry"/>
+        </mxCell>
+        <mxCell id="snowflake" value="Snowflake Warehouse&#xa;Facts, dimensions, KPIs&#xa;Structured source of truth" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;fontSize=14;fontStyle=1" vertex="1" parent="1">
+          <mxGeometry x="850" y="385" width="260" height="105" as="geometry"/>
+        </mxCell>
+        <mxCell id="llm" value="LLM Gateway&#xa;Prompt templates&#xa;Policy checks&#xa;Grounded synthesis" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e1d5e7;strokeColor=#9673a6;fontSize=14;fontStyle=1" vertex="1" parent="1">
+          <mxGeometry x="540" y="405" width="220" height="105" as="geometry"/>
+        </mxCell>
+        <mxCell id="governance" value="Governance Layer&#xa;Access rules&#xa;SQL guardrails&#xa;Audit logging" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f5f5f5;strokeColor=#666666;fontSize=14;fontStyle=1" vertex="1" parent="1">
+          <mxGeometry x="280" y="405" width="190" height="105" as="geometry"/>
+        </mxCell>
+        <mxCell id="obs" value="Observability&#xa;Traces, SQL logs&#xa;Answer quality metrics" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f5f5f5;strokeColor=#666666;fontSize=14;fontStyle=1" vertex="1" parent="1">
+          <mxGeometry x="50" y="415" width="170" height="95" as="geometry"/>
+        </mxCell>
+        <mxCell id="e1" value="query" style="endArrow=block;html=1;rounded=0;fontSize=12" edge="1" parent="1" source="users" target="app">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="e2" value="request" style="endArrow=block;html=1;rounded=0;fontSize=12" edge="1" parent="1" source="app" target="orchestrator">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="e3" value="ground + traverse" style="endArrow=block;html=1;rounded=0;fontSize=12" edge="1" parent="1" source="orchestrator" target="graph">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="e4" value="semantic hints" style="endArrow=block;html=1;rounded=0;fontSize=12" edge="1" parent="1" source="orchestrator" target="vector">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="e5" value="governed SQL" style="endArrow=block;html=1;rounded=0;fontSize=12" edge="1" parent="1" source="orchestrator" target="snowflake">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="e6" value="grounded context" style="endArrow=block;html=1;rounded=0;fontSize=12" edge="1" parent="1" source="orchestrator" target="llm">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="e7" value="policies" style="endArrow=block;html=1;rounded=0;fontSize=12" edge="1" parent="1" source="governance" target="orchestrator">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="e8" value="permissions" style="endArrow=block;html=1;rounded=0;fontSize=12" edge="1" parent="1" source="governance" target="snowflake">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="e9" value="logs" style="endArrow=block;html=1;rounded=0;fontSize=12" edge="1" parent="1" source="app" target="obs">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="e10" value="traces" style="endArrow=block;html=1;rounded=0;fontSize=12" edge="1" parent="1" source="orchestrator" target="obs">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="note" value="Scale principle: app/API and LangGraph workers scale horizontally. Snowflake remains the governed analytical source of truth. Neo4j stores semantic structure and mappings, not raw transactions." style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#cccccc;fontSize=13" vertex="1" parent="1">
+          <mxGeometry x="170" y="600" width="860" height="70" as="geometry"/>
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

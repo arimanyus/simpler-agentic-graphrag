@@ -1,0 +1,68 @@
+<mxfile host="Electron" agent="Cursor">
+  <diagram id="system-flow" name="Runtime System Flow">
+    <mxGraphModel dx="1135" dy="995" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1200" pageHeight="760" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="title" parent="1" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;fontSize=24;fontStyle=1" value="How the GraphRAG System Works for One Query" vertex="1">
+          <mxGeometry height="40" width="720" x="240" y="30" as="geometry" />
+        </mxCell>
+        <mxCell id="query" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=14;fontStyle=1" value="1. User Query&#xa;&quot;Why did APAC retail revenue decline?&quot;" vertex="1">
+          <mxGeometry height="85" width="190" x="60" y="140" as="geometry" />
+        </mxCell>
+        <mxCell id="understand" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;fontSize=14;fontStyle=1" value="2. Query Understanding&#xa;Extract metric, region, business unit, intent" vertex="1">
+          <mxGeometry height="85" width="210" x="315" y="140" as="geometry" />
+        </mxCell>
+        <mxCell id="ground" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;fontSize=14;fontStyle=1" value="3. Ontology Grounding&#xa;Map text mentions to ontology concepts" vertex="1">
+          <mxGeometry height="85" width="220" x="590" y="140" as="geometry" />
+        </mxCell>
+        <mxCell id="expand" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;fontSize=14;fontStyle=1" value="4A. Semantic Expansion&#xa;APAC -&gt; Japan, India, Singapore&#xa;Revenue -&gt; Units, Refunds, Net Revenue" vertex="1">
+          <mxGeometry height="110" width="240" x="900" y="250" as="geometry" />
+        </mxCell>
+        <mxCell id="retrieve" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;fontSize=14;fontStyle=1" value="4B. Structured Retrieval&#xa;Generate governed Snowflake SQL from ontology mappings" vertex="1">
+          <mxGeometry height="100" width="240" x="580" y="260" as="geometry" />
+        </mxCell>
+        <mxCell id="context" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;fontSize=14;fontStyle=1" value="5. Context Builder&#xa;Combine SQL results + semantic evidence" vertex="1">
+          <mxGeometry height="85" width="220" x="590" y="440" as="geometry" />
+        </mxCell>
+        <mxCell id="rerank" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e1d5e7;strokeColor=#9673a6;fontSize=14;fontStyle=1" value="6. Reranking&#xa;Prioritize root-cause evidence" vertex="1">
+          <mxGeometry height="85" width="210" x="315" y="440" as="geometry" />
+        </mxCell>
+        <mxCell id="answer" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=14;fontStyle=1" value="7. Grounded Response&#xa;Explain decline with metrics and relationships" vertex="1">
+          <mxGeometry height="85" width="190" x="60" y="440" as="geometry" />
+        </mxCell>
+        <mxCell id="e1" edge="1" parent="1" source="query" style="endArrow=block;html=1;rounded=0" target="understand">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e2" edge="1" parent="1" source="understand" style="endArrow=block;html=1;rounded=0" target="ground">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e3" edge="1" parent="1" source="ground" style="endArrow=block;html=1;rounded=0;fontSize=12" target="expand" value="graph branch">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="1020" y="180" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e4" edge="1" parent="1" source="ground" style="endArrow=block;html=1;rounded=0;fontSize=12" target="retrieve" value="SQL branch">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e5" edge="1" parent="1" source="expand" style="endArrow=block;html=1;rounded=0" target="context">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e6" edge="1" parent="1" source="retrieve" style="endArrow=block;html=1;rounded=0" target="context">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e7" edge="1" parent="1" source="context" style="endArrow=block;html=1;rounded=0" target="rerank">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e8" edge="1" parent="1" source="rerank" style="endArrow=block;html=1;rounded=0" target="answer">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="callout" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#cccccc;fontSize=13" value="Key point: graph traversal and Snowflake retrieval are coordinated after ontology grounding. The LLM receives compact analytical context, not raw transactional rows." vertex="1">
+          <mxGeometry height="70" width="800" x="200" y="610" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

@@ -1,0 +1,123 @@
+<mxfile host="app.diagrams.net" modified="2026-05-29T01:53:00.000Z" agent="Cursor" version="24.7.17">
+  <diagram id="slide4-example-defense" name="Slide 4 - Example and Defense">
+    <mxGraphModel dx="1600" dy="980" grid="0" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1600" pageHeight="980" math="0" shadow="0">
+      <root>
+        <mxCell id="0"/>
+        <mxCell id="1" parent="0"/>
+
+        <mxCell id="title" value="Example Walkthrough and Defense" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;fontSize=24;fontStyle=1" vertex="1" parent="1">
+          <mxGeometry x="500" y="18" width="600" height="34" as="geometry"/>
+        </mxCell>
+
+        <!-- Query banner -->
+        <mxCell id="query" value="Q:  Why did APAC Retail revenue decline?" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=18;fontStyle=1" vertex="1" parent="1">
+          <mxGeometry x="80" y="62" width="1440" height="50" as="geometry"/>
+        </mxCell>
+
+        <!-- Pipeline row -->
+        <mxCell id="understand" value="1. Query Understanding&#xa;metric, region, BU, intent" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;fontSize=13;fontStyle=1" vertex="1" parent="1">
+          <mxGeometry x="80" y="150" width="265" height="80" as="geometry"/>
+        </mxCell>
+        <mxCell id="ground" value="2. Ontology Grounding&#xa;expand + map to concepts" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;fontSize=13;fontStyle=1" vertex="1" parent="1">
+          <mxGeometry x="375" y="150" width="265" height="80" as="geometry"/>
+        </mxCell>
+        <mxCell id="retrieve" value="3. Governed Retrieval&#xa;mapped Snowflake SQL" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;fontSize=13;fontStyle=1" vertex="1" parent="1">
+          <mxGeometry x="670" y="150" width="265" height="80" as="geometry"/>
+        </mxCell>
+        <mxCell id="synth" value="4. Synthesis&#xa;explain with evidence" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e1d5e7;strokeColor=#9673a6;fontSize=13;fontStyle=1" vertex="1" parent="1">
+          <mxGeometry x="965" y="150" width="265" height="80" as="geometry"/>
+        </mxCell>
+        <mxCell id="answer" value="Grounded Answer&#xa;root-cause explanation" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=13;fontStyle=1" vertex="1" parent="1">
+          <mxGeometry x="1260" y="150" width="260" height="80" as="geometry"/>
+        </mxCell>
+
+        <mxCell id="e_q_u" style="endArrow=block;html=1;edgeStyle=orthogonalEdgeStyle;rounded=1;exitX=0.1;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0" edge="1" parent="1" source="query" target="understand"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="e_u_g" style="endArrow=block;html=1;edgeStyle=orthogonalEdgeStyle;rounded=1" edge="1" parent="1" source="understand" target="ground"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="e_g_r" style="endArrow=block;html=1;edgeStyle=orthogonalEdgeStyle;rounded=1" edge="1" parent="1" source="ground" target="retrieve"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="e_r_s" style="endArrow=block;html=1;edgeStyle=orthogonalEdgeStyle;rounded=1" edge="1" parent="1" source="retrieve" target="synth"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="e_s_a" style="endArrow=block;html=1;edgeStyle=orthogonalEdgeStyle;rounded=1" edge="1" parent="1" source="synth" target="answer"><mxGeometry relative="1" as="geometry"/></mxCell>
+
+        <!-- Grounding detail -->
+        <mxCell id="groundBox" value="Ontology grounding expands the query" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fbfbf3;strokeColor=#d6b656;dashed=1;fontSize=14;fontStyle=1;verticalAlign=top;align=left;spacingLeft=12;spacingTop=8" vertex="1" parent="1">
+          <mxGeometry x="80" y="260" width="820" height="190" as="geometry"/>
+        </mxCell>
+        <mxCell id="apac" value="APAC" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=12;fontStyle=1" vertex="1" parent="1">
+          <mxGeometry x="105" y="345" width="95" height="40" as="geometry"/>
+        </mxCell>
+        <mxCell id="japan" value="Japan" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=12" vertex="1" parent="1">
+          <mxGeometry x="245" y="305" width="120" height="30" as="geometry"/>
+        </mxCell>
+        <mxCell id="india" value="India" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=12" vertex="1" parent="1">
+          <mxGeometry x="245" y="350" width="120" height="30" as="geometry"/>
+        </mxCell>
+        <mxCell id="singapore" value="Singapore" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=12" vertex="1" parent="1">
+          <mxGeometry x="245" y="395" width="120" height="30" as="geometry"/>
+        </mxCell>
+        <mxCell id="revenue" value="Revenue" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;fontSize=12;fontStyle=1" vertex="1" parent="1">
+          <mxGeometry x="470" y="345" width="110" height="40" as="geometry"/>
+        </mxCell>
+        <mxCell id="units" value="Units Sold" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;fontSize=12" vertex="1" parent="1">
+          <mxGeometry x="630" y="305" width="140" height="30" as="geometry"/>
+        </mxCell>
+        <mxCell id="refunds" value="Refunds" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;fontSize=12" vertex="1" parent="1">
+          <mxGeometry x="630" y="350" width="140" height="30" as="geometry"/>
+        </mxCell>
+        <mxCell id="netrev" value="Net Revenue" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;fontSize=12" vertex="1" parent="1">
+          <mxGeometry x="630" y="395" width="140" height="30" as="geometry"/>
+        </mxCell>
+        <mxCell id="ed1" value="rolls_up_to" style="endArrow=block;html=1;edgeStyle=orthogonalEdgeStyle;rounded=1;fontSize=10" edge="1" parent="1" source="japan" target="apac"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="ed2" style="endArrow=block;html=1;edgeStyle=orthogonalEdgeStyle;rounded=1" edge="1" parent="1" source="india" target="apac"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="ed3" style="endArrow=block;html=1;edgeStyle=orthogonalEdgeStyle;rounded=1" edge="1" parent="1" source="singapore" target="apac"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="ed4" value="depends_on" style="endArrow=block;html=1;edgeStyle=orthogonalEdgeStyle;rounded=1;fontSize=10" edge="1" parent="1" source="revenue" target="units"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="ed5" value="impacts" style="endArrow=block;html=1;edgeStyle=orthogonalEdgeStyle;rounded=1;fontSize=10" edge="1" parent="1" source="refunds" target="revenue"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="ed6" style="endArrow=block;html=1;edgeStyle=orthogonalEdgeStyle;rounded=1" edge="1" parent="1" source="netrev" target="revenue"><mxGeometry relative="1" as="geometry"/></mxCell>
+
+        <!-- Mappings panel -->
+        <mxCell id="mapBox" value="Governed mappings (concept -&gt; Snowflake)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fdf3f2;strokeColor=#b85450;dashed=1;fontSize=14;fontStyle=1;verticalAlign=top;align=left;spacingLeft=12;spacingTop=8" vertex="1" parent="1">
+          <mxGeometry x="930" y="260" width="590" height="190" as="geometry"/>
+        </mxCell>
+        <mxCell id="mapText" value="Revenue&#9;-&gt; fact_sales.revenue&#xa;Refunds&#9;-&gt; fact_sales.refunds&#xa;APAC&#9;-&gt; dim_region.parent_region = 'APAC'&#xa;Retail&#9;-&gt; dim_business_unit.name = 'Retail'&#xa;&#xa;SQL is generated from approved mappings,&#xa;not invented freely by the LLM." style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=top;fontSize=13;fontFamily=Courier New" vertex="1" parent="1">
+          <mxGeometry x="950" y="295" width="550" height="145" as="geometry"/>
+        </mxCell>
+
+        <mxCell id="e_g_gb" value="expand" style="endArrow=block;html=1;edgeStyle=orthogonalEdgeStyle;rounded=1;dashed=1;fontSize=11;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.1;entryY=0;entryDx=0;entryDy=0" edge="1" parent="1" source="ground" target="groundBox"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="e_r_mb" value="map" style="endArrow=block;html=1;edgeStyle=orthogonalEdgeStyle;rounded=1;dashed=1;fontSize=11;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.1;entryY=0;entryDx=0;entryDy=0" edge="1" parent="1" source="retrieve" target="mapBox"><mxGeometry relative="1" as="geometry"/></mxCell>
+
+        <!-- Result band -->
+        <mxCell id="resultTitle" value="Result (local demo): APAC Retail, Q1 vs Q2" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;fontSize=16;fontStyle=1" vertex="1" parent="1">
+          <mxGeometry x="80" y="475" width="700" height="28" as="geometry"/>
+        </mxCell>
+        <mxCell id="statRev" value="&lt;b style=&quot;font-size:22px&quot;&gt;350k &#8594; 283k&lt;/b&gt;&lt;br/&gt;&lt;span style=&quot;font-size:12px&quot;&gt;Revenue&lt;/span&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;verticalAlign=middle" vertex="1" parent="1">
+          <mxGeometry x="80" y="515" width="335" height="95" as="geometry"/>
+        </mxCell>
+        <mxCell id="statChange" value="&lt;b style=&quot;font-size:24px&quot;&gt;-19.1%&lt;/b&gt;&lt;br/&gt;&lt;span style=&quot;font-size:12px&quot;&gt;Revenue change (-67,000)&lt;/span&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;verticalAlign=middle" vertex="1" parent="1">
+          <mxGeometry x="435" y="515" width="335" height="95" as="geometry"/>
+        </mxCell>
+        <mxCell id="statRefund" value="&lt;b style=&quot;font-size:24px&quot;&gt;+17,000&lt;/b&gt;&lt;br/&gt;&lt;span style=&quot;font-size:12px&quot;&gt;Refunds (driver)&lt;/span&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;verticalAlign=middle" vertex="1" parent="1">
+          <mxGeometry x="790" y="515" width="335" height="95" as="geometry"/>
+        </mxCell>
+        <mxCell id="statUnits" value="&lt;b style=&quot;font-size:24px&quot;&gt;-65&lt;/b&gt;&lt;br/&gt;&lt;span style=&quot;font-size:12px&quot;&gt;Units sold (driver)&lt;/span&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;verticalAlign=middle" vertex="1" parent="1">
+          <mxGeometry x="1145" y="515" width="375" height="95" as="geometry"/>
+        </mxCell>
+
+        <!-- Defense band -->
+        <mxCell id="defenseTitle" value="Defense" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;fontSize=16;fontStyle=1" vertex="1" parent="1">
+          <mxGeometry x="80" y="640" width="300" height="28" as="geometry"/>
+        </mxCell>
+        <mxCell id="defGraph" value="Why GraphRAG?&#xa;&#xa;Standard RAG retrieves similar chunks. GraphRAG expands retrieval through explicit ontology relationships and hierarchy traversal." style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;fontSize=13;verticalAlign=top;align=left;spacingLeft=12;spacingTop=10" vertex="1" parent="1">
+          <mxGeometry x="80" y="680" width="465" height="150" as="geometry"/>
+        </mxCell>
+        <mxCell id="defSql" value="Why not just SQL?&#xa;&#xa;SQL joins connect tables. The ontology encodes business meaning: hierarchies, metric dependencies, and reasoning relationships." style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;fontSize=13;verticalAlign=top;align=left;spacingLeft=12;spacingTop=10" vertex="1" parent="1">
+          <mxGeometry x="565" y="680" width="465" height="150" as="geometry"/>
+        </mxCell>
+        <mxCell id="defTrade" value="Main tradeoff&#xa;&#xa;The ontology must be maintained, versioned, governed, and kept synchronized with the Snowflake schema." style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f5f5f5;strokeColor=#999999;fontSize=13;verticalAlign=top;align=left;spacingLeft=12;spacingTop=10" vertex="1" parent="1">
+          <mxGeometry x="1050" y="680" width="470" height="150" as="geometry"/>
+        </mxCell>
+
+        <mxCell id="footer" value="Snowflake stores truth | the ontology graph stores meaning | the LLM explains grounded evidence -> that is what makes this GraphRAG, not RAG plus a graph database." style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;fontSize=13;fontStyle=2;fontColor=#666666" vertex="1" parent="1">
+          <mxGeometry x="80" y="845" width="1440" height="28" as="geometry"/>
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

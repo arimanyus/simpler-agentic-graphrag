@@ -1,0 +1,84 @@
+<mxfile host="app.diagrams.net" modified="2026-05-29T00:24:00.000Z" agent="Cursor" version="24.7.17" pages="4">
+  <diagram id="combined-deployment" name="1 Production Deployment">
+    <mxGraphModel dx="1422" dy="794" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1200" pageHeight="760" math="0" shadow="0">
+      <root>
+        <mxCell id="0"/><mxCell id="1" parent="0"/>
+        <mxCell id="t" value="Production Deployment Architecture" style="text;html=1;strokeColor=none;fillColor=none;align=center;fontSize=24;fontStyle=1" vertex="1" parent="1"><mxGeometry x="320" y="30" width="560" height="40" as="geometry"/></mxCell>
+        <mxCell id="a" value="Users" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=14;fontStyle=1" vertex="1" parent="1"><mxGeometry x="70" y="150" width="130" height="65" as="geometry"/></mxCell>
+        <mxCell id="b" value="GraphRAG App / API&#xa;auth + UI" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=14;fontStyle=1" vertex="1" parent="1"><mxGeometry x="270" y="140" width="180" height="85" as="geometry"/></mxCell>
+        <mxCell id="c" value="LangGraph Orchestrator&#xa;stateful retrieval workflow" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;fontSize=14;fontStyle=1" vertex="1" parent="1"><mxGeometry x="520" y="135" width="220" height="95" as="geometry"/></mxCell>
+        <mxCell id="d" value="Neo4j Graph Service&#xa;ontology + mappings" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;fontSize=14;fontStyle=1" vertex="1" parent="1"><mxGeometry x="830" y="85" width="230" height="90" as="geometry"/></mxCell>
+        <mxCell id="e" value="Vector Index&#xa;synonyms + examples" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;fontSize=14;fontStyle=1" vertex="1" parent="1"><mxGeometry x="830" y="225" width="230" height="80" as="geometry"/></mxCell>
+        <mxCell id="f" value="Snowflake&#xa;facts, dimensions, KPIs" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;fontSize=14;fontStyle=1" vertex="1" parent="1"><mxGeometry x="830" y="355" width="230" height="90" as="geometry"/></mxCell>
+        <mxCell id="g" value="LLM Gateway&#xa;grounded synthesis" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e1d5e7;strokeColor=#9673a6;fontSize=14;fontStyle=1" vertex="1" parent="1"><mxGeometry x="520" y="380" width="220" height="85" as="geometry"/></mxCell>
+        <mxCell id="h" value="Governance + Observability&#xa;policies, logs, traces" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f5f5f5;strokeColor=#666666;fontSize=14;fontStyle=1" vertex="1" parent="1"><mxGeometry x="210" y="380" width="240" height="85" as="geometry"/></mxCell>
+        <mxCell id="ab" style="endArrow=block;html=1" edge="1" parent="1" source="a" target="b"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="bc" style="endArrow=block;html=1" edge="1" parent="1" source="b" target="c"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="cd" value="ground + traverse" style="endArrow=block;html=1;fontSize=12" edge="1" parent="1" source="c" target="d"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="ce" value="semantic hints" style="endArrow=block;html=1;fontSize=12" edge="1" parent="1" source="c" target="e"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="cf" value="governed SQL" style="endArrow=block;html=1;fontSize=12" edge="1" parent="1" source="c" target="f"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="cg" value="grounded context" style="endArrow=block;html=1;fontSize=12" edge="1" parent="1" source="c" target="g"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="hc" value="policies" style="endArrow=block;html=1;fontSize=12" edge="1" parent="1" source="h" target="c"><mxGeometry relative="1" as="geometry"/></mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+  <diagram id="combined-flow" name="2 Runtime Flow">
+    <mxGraphModel dx="1422" dy="794" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1200" pageHeight="760" math="0" shadow="0">
+      <root>
+        <mxCell id="0"/><mxCell id="1" parent="0"/>
+        <mxCell id="t" value="Runtime Flow: Why did APAC retail revenue decline?" style="text;html=1;strokeColor=none;fillColor=none;align=center;fontSize=24;fontStyle=1" vertex="1" parent="1"><mxGeometry x="230" y="30" width="740" height="40" as="geometry"/></mxCell>
+        <mxCell id="q" value="User Query" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontStyle=1" vertex="1" parent="1"><mxGeometry x="65" y="150" width="150" height="70" as="geometry"/></mxCell>
+        <mxCell id="u" value="Query Understanding&#xa;KPI, region, BU, intent" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;fontStyle=1" vertex="1" parent="1"><mxGeometry x="285" y="150" width="190" height="80" as="geometry"/></mxCell>
+        <mxCell id="g" value="Ontology Grounding&#xa;mentions -> concepts" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;fontStyle=1" vertex="1" parent="1"><mxGeometry x="550" y="150" width="200" height="80" as="geometry"/></mxCell>
+        <mxCell id="x" value="Graph Expansion&#xa;APAC -> countries&#xa;Revenue -> drivers" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;fontStyle=1" vertex="1" parent="1"><mxGeometry x="850" y="105" width="230" height="90" as="geometry"/></mxCell>
+        <mxCell id="s" value="Structured Retrieval&#xa;governed Snowflake SQL" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;fontStyle=1" vertex="1" parent="1"><mxGeometry x="850" y="255" width="230" height="80" as="geometry"/></mxCell>
+        <mxCell id="c" value="Context Builder&#xa;metrics + evidence" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;fontStyle=1" vertex="1" parent="1"><mxGeometry x="550" y="440" width="200" height="80" as="geometry"/></mxCell>
+        <mxCell id="r" value="Reranking" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e1d5e7;strokeColor=#9673a6;fontStyle=1" vertex="1" parent="1"><mxGeometry x="285" y="440" width="190" height="70" as="geometry"/></mxCell>
+        <mxCell id="a" value="Grounded Response" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontStyle=1" vertex="1" parent="1"><mxGeometry x="65" y="440" width="150" height="70" as="geometry"/></mxCell>
+        <mxCell id="e1" style="endArrow=block;html=1" edge="1" parent="1" source="q" target="u"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="e2" style="endArrow=block;html=1" edge="1" parent="1" source="u" target="g"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="e3" style="endArrow=block;html=1" edge="1" parent="1" source="g" target="x"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="e4" style="endArrow=block;html=1" edge="1" parent="1" source="g" target="s"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="e5" style="endArrow=block;html=1" edge="1" parent="1" source="x" target="c"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="e6" style="endArrow=block;html=1" edge="1" parent="1" source="s" target="c"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="e7" style="endArrow=block;html=1" edge="1" parent="1" source="c" target="r"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="e8" style="endArrow=block;html=1" edge="1" parent="1" source="r" target="a"><mxGeometry relative="1" as="geometry"/></mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+  <diagram id="combined-ontology" name="3 Ontology Model">
+    <mxGraphModel dx="1422" dy="794" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1200" pageHeight="760" math="0" shadow="0">
+      <root>
+        <mxCell id="0"/><mxCell id="1" parent="0"/>
+        <mxCell id="t" value="Financial Analytics Ontology" style="text;html=1;strokeColor=none;fillColor=none;align=center;fontSize=24;fontStyle=1" vertex="1" parent="1"><mxGeometry x="320" y="30" width="560" height="40" as="geometry"/></mxCell>
+        <mxCell id="apac" value="APAC" style="ellipse;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontStyle=1" vertex="1" parent="1"><mxGeometry x="510" y="105" width="130" height="70" as="geometry"/></mxCell>
+        <mxCell id="countries" value="Japan / India / Singapore" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf" vertex="1" parent="1"><mxGeometry x="210" y="105" width="190" height="70" as="geometry"/></mxCell>
+        <mxCell id="retail" value="Retail Business Unit" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;fontStyle=1" vertex="1" parent="1"><mxGeometry x="510" y="245" width="160" height="70" as="geometry"/></mxCell>
+        <mxCell id="revenue" value="Revenue&#xa;fact_sales.revenue" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;fontStyle=1" vertex="1" parent="1"><mxGeometry x="805" y="175" width="210" height="80" as="geometry"/></mxCell>
+        <mxCell id="drivers" value="Units Sold / Refunds / Product Sales" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656" vertex="1" parent="1"><mxGeometry x="805" y="330" width="210" height="80" as="geometry"/></mxCell>
+        <mxCell id="kpi" value="Net Revenue / Profitability" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e1d5e7;strokeColor=#9673a6;fontStyle=1" vertex="1" parent="1"><mxGeometry x="500" y="500" width="200" height="80" as="geometry"/></mxCell>
+        <mxCell id="e1" value="rolls_up_to" style="endArrow=block;html=1;fontSize=12" edge="1" parent="1" source="countries" target="apac"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="e2" value="belongs_to" style="endArrow=block;html=1;fontSize=12" edge="1" parent="1" source="retail" target="apac"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="e3" value="belongs_to" style="endArrow=block;html=1;fontSize=12" edge="1" parent="1" source="revenue" target="retail"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="e4" value="depends_on / impacts" style="endArrow=block;html=1;fontSize=12" edge="1" parent="1" source="revenue" target="drivers"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="e5" value="depends_on" style="endArrow=block;html=1;fontSize=12" edge="1" parent="1" source="kpi" target="revenue"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="e6" value="depends_on" style="endArrow=block;html=1;fontSize=12" edge="1" parent="1" source="kpi" target="drivers"><mxGeometry relative="1" as="geometry"/></mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+  <diagram id="combined-boundaries" name="4 Responsibility Boundaries">
+    <mxGraphModel dx="1422" dy="794" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1200" pageHeight="760" math="0" shadow="0">
+      <root>
+        <mxCell id="0"/><mxCell id="1" parent="0"/>
+        <mxCell id="t" value="Responsibility Boundaries" style="text;html=1;strokeColor=none;fillColor=none;align=center;fontSize=24;fontStyle=1" vertex="1" parent="1"><mxGeometry x="360" y="30" width="480" height="40" as="geometry"/></mxCell>
+        <mxCell id="s" value="Snowflake&#xa;&#xa;Structured truth&#xa;Facts, dimensions, KPIs, governed joins" style="swimlane;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;fontSize=15;fontStyle=1;startSize=38" vertex="1" parent="1"><mxGeometry x="80" y="140" width="240" height="320" as="geometry"/></mxCell>
+        <mxCell id="g" value="Ontology Graph&#xa;&#xa;Business meaning&#xa;Hierarchies, relationships, mappings" style="swimlane;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;fontSize=15;fontStyle=1;startSize=38" vertex="1" parent="1"><mxGeometry x="360" y="140" width="240" height="320" as="geometry"/></mxCell>
+        <mxCell id="l" value="LangGraph&#xa;&#xa;Retrieval control&#xa;Ground, expand, retrieve, assemble, rerank" style="swimlane;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;fontSize=15;fontStyle=1;startSize=38" vertex="1" parent="1"><mxGeometry x="640" y="140" width="240" height="320" as="geometry"/></mxCell>
+        <mxCell id="m" value="LLM&#xa;&#xa;Grounded synthesis&#xa;Explains evidence; does not own truth" style="swimlane;whiteSpace=wrap;html=1;fillColor=#e1d5e7;strokeColor=#9673a6;fontSize=15;fontStyle=1;startSize=38" vertex="1" parent="1"><mxGeometry x="920" y="140" width="200" height="320" as="geometry"/></mxCell>
+        <mxCell id="e1" value="governed SQL" style="endArrow=block;html=1;fontSize=12" edge="1" parent="1" source="l" target="s"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="e2" value="ground + traverse" style="endArrow=block;html=1;fontSize=12" edge="1" parent="1" source="l" target="g"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="e3" value="context" style="endArrow=block;html=1;fontSize=12" edge="1" parent="1" source="l" target="m"><mxGeometry relative="1" as="geometry"/></mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

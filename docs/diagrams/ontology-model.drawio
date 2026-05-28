@@ -1,0 +1,91 @@
+<mxfile host="Electron" agent="Cursor">
+  <diagram id="ontology-model" name="Financial Ontology Model">
+    <mxGraphModel dx="1099" dy="779" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1200" pageHeight="760" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="title" parent="1" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;fontSize=24;fontStyle=1" value="Financial Analytics Domain Ontology" vertex="1">
+          <mxGeometry height="40" width="620" x="290" y="30" as="geometry" />
+        </mxCell>
+        <mxCell id="apac" parent="1" style="ellipse;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=14;fontStyle=1" value="Region&#xa;APAC" vertex="1">
+          <mxGeometry height="80" width="150" x="500" y="105" as="geometry" />
+        </mxCell>
+        <mxCell id="japan" parent="1" style="ellipse;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=14" value="Region&#xa;Japan" vertex="1">
+          <mxGeometry height="70" width="130" x="250" y="105" as="geometry" />
+        </mxCell>
+        <mxCell id="india" parent="1" style="ellipse;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=14" value="Region&#xa;India" vertex="1">
+          <mxGeometry height="70" width="130" x="250" y="205" as="geometry" />
+        </mxCell>
+        <mxCell id="singapore" parent="1" style="ellipse;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=14" value="Region&#xa;Singapore" vertex="1">
+          <mxGeometry height="70" width="130" x="250" y="305" as="geometry" />
+        </mxCell>
+        <mxCell id="retail" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;fontSize=14;fontStyle=1" value="Business Unit&#xa;Retail" vertex="1">
+          <mxGeometry height="75" width="150" x="500" y="255" as="geometry" />
+        </mxCell>
+        <mxCell id="revenue" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;fontSize=14;fontStyle=1" value="Metric&#xa;Revenue&#xa;maps_to fact_sales.revenue" vertex="1">
+          <mxGeometry height="90" width="230" x="790" y="135" as="geometry" />
+        </mxCell>
+        <mxCell id="units" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;fontSize=14" value="Metric&#xa;Units Sold&#xa;maps_to fact_sales.units" vertex="1">
+          <mxGeometry height="80" width="230" x="790" y="270" as="geometry" />
+        </mxCell>
+        <mxCell id="refunds" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;fontSize=14" value="Metric&#xa;Refunds&#xa;maps_to fact_sales.refunds" vertex="1">
+          <mxGeometry height="80" width="230" x="790" y="390" as="geometry" />
+        </mxCell>
+        <mxCell id="netrev" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e1d5e7;strokeColor=#9673a6;fontSize=14;fontStyle=1" value="KPI&#xa;Net Revenue&#xa;Revenue - Refunds" vertex="1">
+          <mxGeometry height="85" width="170" x="500" y="370" as="geometry" />
+        </mxCell>
+        <mxCell id="profitability" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e1d5e7;strokeColor=#9673a6;fontSize=14;fontStyle=1" value="KPI&#xa;Profitability&#xa;Net Revenue - Expense" vertex="1">
+          <mxGeometry height="85" width="170" x="500" y="520" as="geometry" />
+        </mxCell>
+        <mxCell id="expense" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;fontSize=14" value="Metric&#xa;Expense&#xa;maps_to fact_sales.expense" vertex="1">
+          <mxGeometry height="80" width="230" x="790" y="525" as="geometry" />
+        </mxCell>
+        <mxCell id="product" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;fontSize=14" value="Product&#xa;Product Sales" vertex="1">
+          <mxGeometry height="75" width="170" x="1110" y="135" as="geometry" />
+        </mxCell>
+        <mxCell id="segment" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;fontSize=14" value="Customer Segment&#xa;Premium" vertex="1">
+          <mxGeometry height="75" width="170" x="1110" y="230" as="geometry" />
+        </mxCell>
+        <mxCell id="e1" edge="1" parent="1" source="japan" style="endArrow=block;html=1;rounded=0;fontSize=12" target="apac" value="rolls_up_to">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e2" edge="1" parent="1" source="india" style="endArrow=block;html=1;rounded=0;fontSize=12" target="apac" value="rolls_up_to">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e3" edge="1" parent="1" source="singapore" style="endArrow=block;html=1;rounded=0;fontSize=12" target="apac" value="rolls_up_to">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e4" edge="1" parent="1" source="retail" style="endArrow=block;html=1;rounded=0;fontSize=12" target="apac" value="belongs_to">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e5" edge="1" parent="1" source="revenue" style="endArrow=block;html=1;rounded=0;fontSize=12" target="retail" value="belongs_to">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e6" edge="1" parent="1" source="revenue" style="endArrow=block;html=1;rounded=0;fontSize=12" target="units" value="depends_on">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e7" edge="1" parent="1" source="refunds" style="endArrow=block;html=1;rounded=0;fontSize=12" target="revenue" value="impacts">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e8" edge="1" parent="1" source="netrev" style="endArrow=block;html=1;rounded=0;fontSize=12" target="revenue" value="depends_on">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e9" edge="1" parent="1" source="netrev" style="endArrow=block;html=1;rounded=0;fontSize=12" target="refunds" value="depends_on">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e10" edge="1" parent="1" source="profitability" style="endArrow=block;html=1;rounded=0;fontSize=12" target="netrev" value="depends_on">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e11" edge="1" parent="1" source="profitability" style="endArrow=block;html=1;rounded=0;fontSize=12" target="expense" value="depends_on">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e12" edge="1" parent="1" source="revenue" style="endArrow=block;html=1;rounded=0;fontSize=12" target="product" value="depends_on">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e13" edge="1" parent="1" source="segment" style="endArrow=block;html=1;rounded=0;fontSize=12" target="revenue" value="linked_to">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
